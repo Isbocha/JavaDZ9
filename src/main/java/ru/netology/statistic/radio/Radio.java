@@ -1,8 +1,10 @@
 
 package ru.netology.statistic.radio;
+
 public class Radio {
 
-    public int currentStation;
+    private int currentStation;
+    private int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
@@ -18,43 +20,6 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-    public void setToMaxStation() {
-        currentStation = 9;
-    }
-
-    public void setToMinStation() {
-        {
-            currentStation = 0;
-        }
-    }
-
-    public void increaseStation() {
-
-        if (currentStation < 9) {
-            currentStation = currentStation + 1;
-        }
-        if (currentStation == 9) {
-            currentStation = 0;
-        }
-
-    }
-
-    //  }
-    public void decreaseStation() {
-        if (currentStation > 0) {
-            currentStation = currentStation - 1;
-        }
-        if (
-                currentStation == 0) {
-            currentStation = 9;
-        }
-    }
-
-    //Тут по звуку
-
-
-    public int currentVolume;
-
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -69,6 +34,35 @@ public class Radio {
 
         currentVolume = newCurrentVolume;
     }
+
+    public void setToMaxStation() {
+        currentStation = 9;
+    }
+
+    public void setToMinStation() {
+        currentStation = 0;
+    }
+
+    public void increaseStation() {
+
+        if (currentStation == 9) {
+            currentStation = 0;
+        } else {
+            currentStation = currentStation + 1;
+        }
+    }
+
+    //  }
+    public void decreaseStation() {
+        if (currentStation > 0) {
+            currentStation = currentStation - 1;
+        }
+        if (
+                currentStation == 0) {
+            currentStation = 9;
+        }
+    }
+
 
     public void setToMaxVolume() {
         currentVolume = 100;
