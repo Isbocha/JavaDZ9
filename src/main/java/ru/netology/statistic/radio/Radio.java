@@ -1,37 +1,23 @@
 
 package ru.netology.statistic.radio;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
 public class Radio {
-    private int quantityStation = 10;
+    private int quantityStation;
     private int maxStation = quantityStation - 1;
-    private int minStation = 0;
+    private int minStation;
     private int currentStation = minStation;
-    private int maxVolume = 100;
-    private int minVolume = 0;
+    private int maxVolume;
+    private int minVolume;
     private int currentVolume = minVolume;
-
-    public Radio(int station) {
-        this.quantityStation = station;
-        this.maxStation = station - 1;
-        this.minStation = minStation;
-        this.currentStation = station - 1;
-    }
-    public Radio() {
-        this.currentStation = minStation;
-        this.maxStation = maxStation;
-        this.minStation = minStation;
-    }
-    public int getCurrentStation() {
-        return currentStation;
-    }
-
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public int getMinStation() {
-        return minStation;
-    }
 
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < minStation) {
@@ -43,9 +29,6 @@ public class Radio {
         currentStation = newCurrentStation;
     }
 
-      public int getCurrentVolume() {
-        return currentVolume;
-    }
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume > maxVolume) {
             return;
@@ -57,14 +40,6 @@ public class Radio {
         currentVolume = newCurrentVolume;
     }
 
-    public void setToMaxStation() {
-        currentStation = maxStation;
-    }
-
-    public void setToMinStation() {
-        currentStation = minStation;
-    }
-
     public void increaseStation() {
 
         if (currentStation == maxStation) {
@@ -74,24 +49,14 @@ public class Radio {
         }
     }
 
-    //  }
     public void decreaseStation() {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
         }
-              if (
+        if (
                 currentStation == minStation) {
             currentStation = maxStation;
         }
-    }
-
-
-    public void setToMaxVolume() {
-        currentVolume = maxVolume;
-    }
-
-    public void setToMinVolume() {
-        currentVolume = minVolume;
     }
 
     public void increaseVolume() {//увеличение громкости на 1
@@ -110,4 +75,6 @@ public class Radio {
         }
     }
 }
+
+
 
