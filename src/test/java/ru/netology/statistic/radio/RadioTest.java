@@ -89,7 +89,22 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    // а тут тесты по громкости
+    @Test
+    public void testQuantityStation() {
+        Radio station = new Radio(10);
+        Assertions.assertEquals(9, station.getMaxStation());
+        Assertions.assertEquals(0, station.getMinStation());
+        Assertions.assertEquals(9, station.getCurrentStation());
+    }
+
+    @Test
+    public void testStation() {
+        Radio station = new Radio();
+        Assertions.assertEquals(9, station.getMaxStation());
+        Assertions.assertEquals(0, station.getMinStation());
+        Assertions.assertEquals(0, station.getCurrentStation());
+    }
+
     @Test
     public void shouldSetVolume() {
         Radio volume = new Radio();
@@ -182,5 +197,13 @@ public class RadioTest {
         int expected = 0;
         int actual = volume.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testVolume() {
+        Radio station = new Radio();
+        Assertions.assertEquals(9, station.getMaxStation());
+        Assertions.assertEquals(0, station.getMinStation());
+        Assertions.assertEquals(0, station.getCurrentStation());
     }
 }
