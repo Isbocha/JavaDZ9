@@ -224,4 +224,16 @@ public class RadioTest {
         int actual = radio.getQuantityStation();
         Assertions.assertEquals( expected,actual);
     }
+
+    @Test
+    public void radioNull(){
+        Radio radio = new Radio();
+        Assertions.assertEquals(10, radio.getQuantityStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+        Assertions.assertEquals(100, radio.getMaxVolume());
+        Assertions.assertEquals(0, radio.getMinVolume());
+        Assertions.assertEquals(0, radio.getCurrentVolume());
+    }
 }
