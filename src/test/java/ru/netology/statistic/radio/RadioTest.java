@@ -210,13 +210,13 @@ public class RadioTest {
         Assertions.assertEquals(0, radio.getCurrentVolume());
     }
 
-@Test
+    @Test
     public void testNewMaxVolume (){
         radio.setMaxVolume(110);
         int expected = 110;
-                int actual = radio.getMaxVolume();
+        int actual = radio.getMaxVolume();
         Assertions.assertEquals( expected,actual);
-}
+    }
     @Test
     public void testNewQuantityStationNew (){
         radio.setQuantityStation(110);
