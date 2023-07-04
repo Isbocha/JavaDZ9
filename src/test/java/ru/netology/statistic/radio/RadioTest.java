@@ -202,8 +202,18 @@ public class RadioTest {
     @Test
     public void testVolume() {
         Radio station = new Radio();
+        Assertions.assertEquals(10,station.getQuantityStation());
         Assertions.assertEquals(9, station.getMaxStation());
         Assertions.assertEquals(0, station.getMinStation());
         Assertions.assertEquals(0, station.getCurrentStation());
+        Assertions.assertEquals(100,station.getMaxVolume());
+        Assertions.assertEquals(0,station.getMinVolume());
+    }
+    @Test void TestQuantityStation(){
+        Radio station = new Radio();
+        station.setQuantityStation();
+        int expected = 9;
+        int actual = station.getMaxStation();
+        Assertions.assertEquals(expected,actual);
     }
 }
