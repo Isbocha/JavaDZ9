@@ -211,23 +211,23 @@ public class RadioTest {
     }
 
     @Test
-    public void testNewMaxVolume (){
+    public void testNewMaxVolume() {
         radio.setMaxVolume(110);
         int expected = 110;
         int actual = radio.getMaxVolume();
-        Assertions.assertEquals( expected,actual);
-    }
-    @Test
-    public void testNewQuantityStationNew (){
-        radio.setQuantityStation(110);
-        int expected = 110;
-        int actual = radio.getQuantityStation();
-        Assertions.assertEquals( expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void radioNull(){
-        Radio radio = new Radio();
+    public void testNewQuantityStationNew() {
+        radio.setQuantityStation(110);
+        int expected = 110;
+        int actual = radio.getQuantityStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radioNull() {
         Assertions.assertEquals(10, radio.getQuantityStation());
         Assertions.assertEquals(9, radio.getMaxStation());
         Assertions.assertEquals(0, radio.getMinStation());
